@@ -68,6 +68,5 @@ vim.keymap.set("n", "<C-]>", ":ToggleTerm direction=horizontal size=20")
 --vim.keymap.set("n", "<C-[>", ":ToggleTerm direction=float")
 
 
--- COMMENTING
-vim.keymap.set("n", "<C-/>", "gcc", { remap = true })
+
 
