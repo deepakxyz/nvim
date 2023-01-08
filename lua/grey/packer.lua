@@ -22,6 +22,7 @@ return require('packer').startup(function(use)
         vim.cmd('colorscheme no-clown-fiesta')
     end
  })
+
 --  use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use {
   'nvim-lualine/lualine.nvim',
@@ -54,6 +55,20 @@ return require('packer').startup(function(use)
     end
 }
 
+-- TODO 
+use {
+  "folke/todo-comments.nvim",
+  requires = "nvim-lua/plenary.nvim",
+  config = function()
+    require("todo-comments").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+}
+
+
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
 
   use('nvim-treesitter/nvim-treesitter', {run= ':TSUpdate'})
@@ -61,6 +76,11 @@ return require('packer').startup(function(use)
   use('ThePrimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
+  use('tpope/vim-surround') -- SORRUNDS
+  use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+}
  
   -- NAVIGATION
   use("christoomey/vim-tmux-navigator") -- navigator
@@ -81,6 +101,14 @@ return require('packer').startup(function(use)
 
   })
   end}
+
+  -- RUST
+  use 'neovim/nvim-lspconfig'
+  use 'simrat39/rust-tools.nvim'
+
+  -- Debugging
+  use 'nvim-lua/plenary.nvim'
+  use 'mfussenegger/nvim-dap'
   
   -- SIDE TREE PANE
   use {
