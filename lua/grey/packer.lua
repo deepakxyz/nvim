@@ -15,14 +15,21 @@ return require('packer').startup(function(use)
 
 
   --use 'navarasu/onedark.nvim' -- Theme inspired by Atom
-  use({
+   use({
     'aktersnurra/no-clown-fiesta.nvim',
     as = 'no-clown-fiesta',
     config = function()
         vim.cmd('colorscheme no-clown-fiesta')
     end
- })
+ }) 
 
+  --[[ use({
+    'LunarVim/horizon.nvim',
+    as = 'horizon',
+    config = function()
+        vim.cmd('colorscheme horizon')
+    end
+ }) ]]
 --  use 'nvim-lualine/lualine.nvim' -- Fancier statusline
   use {
   'nvim-lualine/lualine.nvim',
